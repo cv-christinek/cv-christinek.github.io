@@ -1,0 +1,961 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+:root {
+	--main-color-purple: #8e2de2;
+	--main-color-blue: #4a00e0;
+	--menu-color-gradient: linear-gradient(
+		91.37deg,
+		var(--main-color-purple),
+		#000000
+	);
+	--main-color-gradient: linear-gradient(
+		91.37deg,
+		var(--main-color-purple) 0.87%,
+		var(--main-color-blue) 105.3%
+	);
+	--font-size: calc(1em + 0.25rem);
+	--font-weight: 400;
+	--padding: 50px;
+}
+
+html,
+body,
+h1,
+h2,
+h3 {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100vh;
+	width: 100%;
+	font-size: calc(1em + 0.2vw);
+	background: linear-gradient(-45deg, #efddff, #f9ddff, #dac8ff, #d2fff4);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	font-family: 'Poppins', sans-serif;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.hamb {
+	display: none;
+}
+
+.popup {
+	display: none;
+}
+
+.main-header {
+	font-size: calc(1em + 0.375vw);
+	width: 100%;
+	height: calc(2em + 2vw);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+}
+
+.main-header__link {
+	background: var(--menu-color-gradient);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-decoration: none;
+	transition: linear 0.2s;
+	animation: slide-up 2s;
+}
+
+@keyframes slide-up {
+	from {
+		opacity: 0.1;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.main-header__link:hover {
+	text-shadow: #8e2de2 1px 0 10px;
+}
+
+.main__container {
+	width: 100%;
+	max-width: 60.9375vw;
+	margin: 0px auto;
+	padding: 3.06vw;
+	background-color: #ffff;
+	box-shadow: 4px 0px 62px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.cv-image {
+	width: 100%;
+	height: calc(166px + 6.5vw);
+	border-radius: 20px;
+}
+.cv-image__img {
+	border-radius: 20px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.contact_section {
+	padding-left: var(--padding);
+}
+
+.contact_section__h1 {
+	font-size: calc(2em + 0.1875vw);
+	background: var(--main-color-gradient);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.contact_section__h2 {
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
+}
+
+.contact_section__ul {
+	list-style-type: none;
+	padding-left: 0;
+	margin-top: 5px;
+}
+.contact_section__li-icon {
+	text-align: center;
+	width: 20px;
+	line-height: 1.9em;
+	padding-right: 18px;
+}
+
+.contact_section__li-link {
+	position: relative;
+	color: #000000;
+	text-decoration: none;
+}
+
+.contact_section__li-link::after {
+	display: block;
+	position: absolute;
+	content: '';
+	left: 0;
+	width: 0;
+	height: 2px;
+	bottom: -2px;
+	background-color: #8e2de2;
+	transition: width 0.3s ease-out;
+}
+.contact_section__li-link:hover:after {
+	width: 100%;
+}
+
+.about_section {
+	width: 100%;
+	min-height: 150px;
+}
+
+.about_section__h2 {
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
+}
+
+.about_section__text {
+	margin-top: 5px;
+	text-align: justify;
+}
+
+.about_section__ul {
+	padding-left: 20px;
+	text-align: justify;
+}
+
+.education_section {
+	border-radius: 30px;
+	padding-left: var(--padding);
+	width: 100%;
+}
+
+.education_section__h2 {
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
+}
+.education_section__time-period-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 170px;
+	height: 30px;
+	border-radius: 0.326vw;
+	background: var(--main-color-gradient);
+}
+
+.education_section__time-period-box__text {
+	font-size: 0.875em;
+	font-weight: 600;
+	color: #fffeed;
+}
+
+.education_section__h3 {
+	font-size: 1.06em;
+}
+
+.education_section__text {
+	margin-top: 0;
+	text-align: justify;
+}
+
+.slider-hobbies {
+	padding-left: var(--padding);
+}
+
+.slider-hobbies__h {
+	font-size: var(--font-size);
+	font-weight: var(--font-weight);
+}
+
+.slider-hobbies_container {
+	position: relative;
+	width: 28.65vw;
+	height: 32.55vw;
+	margin-top: 10px;
+	background: #efddff;
+	border: 0.977vw solid #ffff;
+	border-radius: 5px;
+	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.slider-hobbies_wrapper {
+	position: relative;
+	display: flex;
+	width: 300%;
+	height: 100%;
+	justify-content: center;
+	transition: 0.3s ease;
+}
+
+.slider-hobbies__card {
+	position: relative;
+	width: 28.65vw;
+	height: 32.55vw;
+}
+
+.slider-hobbies__imgbox {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.slider-hobbies__imgbox_img {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	object-fit: cover;
+}
+
+.slider-hobbies__info-panel {
+	position: absolute;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.6);
+	height: 100%;
+	width: 100%;
+	padding: 20px 40px;
+	text-align: center;
+	backdrop-filter: blur(5px);
+	bottom: -100%;
+	transition: 0.1s 0.2s ease;
+}
+.slider-hobbies__card:hover .slider-hobbies__info-panel {
+	bottom: 0%;
+	transition: 0.4s ease-in-out;
+}
+.slider-hobbies__info-panel__h3 {
+	display: inline-block;
+	position: relative;
+	font-size: 1.5em;
+	transform: translateY(50px);
+	opacity: 0;
+	transition: 0.7s 0.03s ease;
+}
+
+.slider-hobbies__info-panel__h3::after {
+	position: absolute;
+	content: '';
+	height: 3px;
+	width: 100%;
+	background: var(--main-color-gradient);
+	bottom: 0;
+	left: 0%;
+}
+
+.slider-hobbies__info-panel__text {
+	font-weight: 300;
+	text-align: left;
+	margin: 8px 0;
+	color: #d8d8d8;
+	transform: translateY(50px);
+	opacity: 0;
+	transition: 0.7s 0.09s ease;
+}
+
+.slider-hobbies__card:hover
+	.slider-hobbies__info-panel
+	.slider-hobbies__info-panel__h3,
+.slider-hobbies__card:hover
+	.slider-hobbies__info-panel
+	.slider-hobbies__info-panel__text {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.slider-hobbies_btn {
+	display: none;
+	-webkit-appearance: none;
+	visibility: hidden;
+}
+
+.slider-hobbies__btnbar {
+	display: flex;
+	position: absolute;
+	height: 3px;
+	bottom: 5%;
+}
+
+.slider-hobbies__btnbar .slider-hobbies__navkeys {
+	height: 1.17vw;
+	width: 1.17vw;
+	background: var(--main-color-gradient);
+	margin: auto 0.32vw;
+	border-radius: 50px;
+	border: 2px solid #d8d8d8;
+	cursor: pointer;
+	transition: 0.3s ease;
+}
+
+#slider-hobbies_btn1:checked
+	~ .slider-hobbies_container
+	.slider-hobbies__btnbar
+	.key1,
+#slider-hobbies_btn2:checked
+	~ .slider-hobbies_container
+	.slider-hobbies__btnbar
+	.key2,
+#slider-hobbies_btn3:checked
+	~ .slider-hobbies_container
+	.slider-hobbies__btnbar
+	.key3 {
+	width: 3.9vw;
+}
+
+#slider-hobbies_btn1:checked
+	~ .slider-hobbies_container
+	.slider-hobbies_wrapper {
+	transform: translateX(calc(28.65vw - 1.954vw));
+}
+
+#slider-hobbies_btn3:checked
+	~ .slider-hobbies_container
+	.slider-hobbies_wrapper {
+	transform: translateX(calc(-28.65vw + 1.954vw));
+}
+
+.footer {
+	width: 100%;
+	margin-top: 83px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	left: 0;
+	right: 0;
+	background: #ffffff;
+	box-shadow: 4px 0px 41px rgba(0, 0, 0, 0.25);
+}
+
+.footer__cotainer {
+	max-width: 78.125vw;
+	margin: 0px auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer_left,
+.footer_right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer_left__text {
+	font-size: calc(1em + 0.125vw);
+}
+.footer_social {
+	margin-left: 0;
+	padding-left: 0;
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+}
+.footer_social__item {
+	list-style-type: none;
+	text-decoration: none;
+}
+
+.footer_social__item__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.footer_social__item__img {
+	width: 2.5vw;
+	height: 2.5vw;
+	margin-right: 1.3vw;
+	transition: linear 0.2s;
+}
+
+.footer_social__item__img:hover {
+	transform: scale(1.2);
+}
+
+.footer_right__link {
+	color: #000000;
+	font-size: 1.125em;
+	text-decoration: none;
+	transition: linear 0.2s;
+}
+
+.footer_right__link:hover {
+	transform: scale(1.1);
+	text-shadow: #8e2de2 1px 0 10px;
+}
+
+a::selection,
+li::selection,
+p::selection {
+	color: #444444;
+	background: #ffffff;
+	text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc,
+		1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee,
+		4px 3px 1px #cccccc, 3px 4px 1px #eeeeee, 5px 4px 1px #cccccc,
+		4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee,
+		7px 6px 1px #cccccc;
+}
+
+::-webkit-scrollbar {
+	width: 0.846vw;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--main-color-gradient);
+	border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #4a00e0;
+	border-radius: 20px;
+}
+
+@media screen and (min-width: 1490px) {
+	.cv-image,
+	.about_section {
+		width: 41.35%;
+	}
+	.contact_section,
+	.education_section,
+	.slider-hobbies {
+		width: 58.65%;
+	}
+
+	body {
+		font-size: 1.2vw;
+	}
+
+	.cv-image {
+		height: calc(166px + 8.5vw);
+		margin-bottom: 10px;
+	}
+	.education_section__time-period-box {
+		width: 12vw;
+		height: 1.95vw;
+	}
+}
+@media screen and (min-width: 1920px) {
+	.contact_section,
+	.education_section,
+	.slider-hobbies {
+		padding-left: 3.256vw;
+	}
+
+	.cv-image {
+		height: calc(146px + 10.5vw);
+		margin-bottom: 10px;
+	}
+	.education_section__time-period-box {
+		width: 12vw;
+		height: 1.95vw;
+	}
+}
+@media screen and (min-width: 2500px) {
+	.cv-image {
+		height: calc(206px + 10.5vw);
+		margin-bottom: 10px;
+	}
+}
+@media screen and (min-width: 3000px) {
+	.cv-image {
+		height: calc(336px + 10.5vw);
+		margin-bottom: 10px;
+	}
+}
+@media screen and (min-width: 1280px) and (max-width: 1489.99px) {
+	.cv-image,
+	.about_section {
+		width: 41.35%;
+	}
+	.contact_section,
+	.education_section,
+	.slider-hobbies {
+		width: 58.65%;
+	}
+
+	body {
+		font-size: 1.2vw;
+	}
+
+	.cv-image {
+		height: calc(166px + 9.5vw);
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (min-width: 1026px) and (max-width: 1280.99px) {
+	.cv-image,
+	.about_section {
+		width: 41.35%;
+	}
+	.contact_section,
+	.education_section,
+	.slider-hobbies {
+		width: 58.65%;
+	}
+	.main__container {
+		width: 100%;
+		max-width: 80.9375vw;
+	}
+	.cv-image {
+		height: calc(196px + 9.5vw);
+		margin-bottom: 10px;
+	}
+	.footer_social__item__img {
+		width: 3.8vw;
+		height: 3.8vw;
+		margin-right: 2vw;
+	}
+
+	.slider-hobbies_container {
+		width: 38.65vw;
+		height: 39.55vw;
+	}
+
+	.slider-hobbies__card {
+		width: 38.65vw;
+		height: 39.55vw;
+	}
+
+	.slider-hobbies__btnbar .slider-hobbies__navkeys {
+		height: 22px;
+		width: 22px;
+		margin: auto 10px;
+	}
+	.slider-hobbies__btnbar {
+		bottom: 8%;
+	}
+	#slider-hobbies_btn1:checked
+		~ .slider-hobbies_container
+		.slider-hobbies_wrapper {
+		transform: translateX(calc(38.65vw - 1.954vw));
+	}
+
+	#slider-hobbies_btn3:checked
+		~ .slider-hobbies_container
+		.slider-hobbies_wrapper {
+		transform: translateX(calc(-38.65vw + 1.954vw));
+	}
+	#slider-hobbies_btn1:checked
+		~ .slider-hobbies_container
+		.slider-hobbies__btnbar
+		.key1,
+	#slider-hobbies_btn2:checked
+		~ .slider-hobbies_container
+		.slider-hobbies__btnbar
+		.key2,
+	#slider-hobbies_btn3:checked
+		~ .slider-hobbies_container
+		.slider-hobbies__btnbar
+		.key3 {
+		width: 60px;
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1025.99px) {
+	.about_section,
+	.education_section,
+	.slider-hobbies {
+		width: 100%;
+		padding-left: 0;
+	}
+
+	.cv-image {
+		width: 41.35%;
+	}
+
+	.contact_section {
+		width: 58.65%;
+	}
+
+	.main__container {
+		width: 100%;
+		max-width: 90.9375vw;
+	}
+
+	.cv-image {
+		height: calc(196px + 9.5vw);
+		margin-bottom: 10px;
+	}
+	.footer_social__item__img {
+		width: 4.5vw;
+		height: 4.5vw;
+		margin-right: 3vw;
+	}
+
+	.slider-hobbies_container {
+		margin: 0 auto;
+		width: 48.65vw;
+		height: 55.55vw;
+	}
+
+	.slider-hobbies__card {
+		width: 48.65vw;
+		height: 55.55vw;
+	}
+	.slider-hobbies__btnbar {
+		bottom: 8%;
+	}
+	.slider-hobbies__btnbar .slider-hobbies__navkeys {
+		height: 25px;
+		width: 25px;
+		margin: auto 10px;
+	}
+	#slider-hobbies_btn1:checked
+		~ .slider-hobbies_container
+		.slider-hobbies_wrapper {
+		transform: translateX(calc(48.65vw - 1.954vw));
+	}
+
+	#slider-hobbies_btn3:checked
+		~ .slider-hobbies_container
+		.slider-hobbies_wrapper {
+		transform: translateX(calc(-48.65vw + 1.954vw));
+	}
+	#slider-hobbies_btn1:checked
+		~ .slider-hobbies_container
+		.slider-hobbies__btnbar
+		.key1,
+	#slider-hobbies_btn2:checked
+		~ .slider-hobbies_container
+		.slider-hobbies__btnbar
+		.key2,
+	#slider-hobbies_btn3:checked
+		~ .slider-hobbies_container
+		.slider-hobbies__btnbar
+		.key3 {
+		width: 80px;
+	}
+}
+@media screen and (max-width: 1025.99px) {
+	.main-header__link {
+		display: none;
+	}
+	.hamb {
+		z-index: 101;
+		display: flex;
+		align-items: center;
+	}
+	.hamb__field {
+		z-index: 101;
+		cursor: pointer;
+	}
+	.bar {
+		z-index: 101;
+		position: relative;
+		left: 40vw;
+		display: block;
+		width: 30px;
+		height: 5px;
+		margin: 6px auto;
+		background-color: rgb(193, 164, 199);
+		transition: 0.2s;
+	}
+	.popup {
+		position: fixed;
+		top: 0px;
+		right: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			268.93deg,
+			rgb(193, 164, 199) 0.64%,
+			rgb(193, 164, 199) 33.67%,
+			rgba(193, 164, 199, 0.85) 59.23%,
+			rgba(193, 164, 199, 0.72) 76.62%,
+			rgba(199, 182, 164, 0) 98.81%
+		);
+		z-index: 100;
+		display: flex;
+		transition: 0.3s;
+	}
+	.popup.open {
+		right: 0;
+	}
+	.popup .main-header__link {
+		font-size: 1.4em;
+		font-weight: 600;
+		width: 100%;
+		height: 100%;
+		margin-top: 13vh;
+
+		text-align: right;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: start;
+		overflow: auto;
+	}
+	.hamb__field.active .bar:nth-child(2) {
+		opacity: 0;
+	}
+	.hamb__field.active .bar:nth-child(1) {
+		background-color: var(--main-color-purple);
+		border-radius: 20px;
+		transform: translateY(8.5px) rotate(45deg);
+	}
+	.hamb__field.active .bar:nth-child(3) {
+		background-color: var(--main-color-purple);
+		border-radius: 20px;
+		transform: translateY(-13px) rotate(-45deg);
+	}
+	body.noscroll {
+		overflow: hidden;
+	}
+}
+@media screen and (min-width: 416px) and (max-width: 768.99px) {
+	.main-header {
+		height: calc(2em + 3vw);
+	}
+
+	.cv-image,
+	.about_section,
+	.contact_section,
+	.education_section,
+	.slider-hobbies {
+		width: 100%;
+		padding-left: 0;
+	}
+	.main__container {
+		width: 100%;
+		max-width: 90.9375vw;
+	}
+	.cv-image {
+		height: 366px;
+		margin-bottom: 10px;
+	}
+	.cv-image__img {
+		object-position: 65% 35%;
+	}
+	.contact_section__li-icon {
+		line-height: 2.5em;
+	}
+	.contact_section__li-link {
+		font-size: 1.2em;
+	}
+	.education_section__time-period-box {
+		border-radius: 5px;
+	}
+	.footer_left__text,
+	.footer_right__link {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		font-size: 1em;
+	}
+	.footer_social__item__img {
+		width: 6.5vw;
+		height: 6.5vw;
+		margin: 0;
+	}
+	.footer_social__item:not(:last-of-type) {
+		margin-right: 4vw;
+	}
+
+	.slider-hobbies_container {
+		margin: 0 auto;
+		width: 80.65vw;
+		height: 87.55vw;
+	}
+	.slider-hobbies__h {
+		margin-bottom: 10px;
+	}
+	.slider-hobbies__card {
+		width: 80.65vw;
+		height: 87.55vw;
+	}
+	.slider-hobbies__btnbar {
+		bottom: 8%;
+	}
+	.slider-hobbies__btnbar .slider-hobbies__navkeys {
+		height: 30px;
+		width: 30px;
+		margin: auto 12px;
+	}
+	#slider-hobbies_btn1:checked
+		~ .slider-hobbies_container
+		.slider-hobbies_wrapper {
+		transform: translateX(calc(80.65vw - 1.954vw));
+	}
+
+	#slider-hobbies_btn3:checked
+		~ .slider-hobbies_container
+		.slider-hobbies_wrapper {
+		transform: translateX(calc(-80.65vw + 1.954vw));
+	}
+
+	#slider-hobbies_btn1:checked
+		~ .slider-hobbies_container
+		.slider-hobbies__btnbar
+		.key1,
+	#slider-hobbies_btn2:checked
+		~ .slider-hobbies_container
+		.slider-hobbies__btnbar
+		.key2,
+	#slider-hobbies_btn3:checked
+		~ .slider-hobbies_container
+		.slider-hobbies__btnbar
+		.key3 {
+		width: 80px;
+	}
+}
+
+@media screen and (max-width: 415.99px) {
+	.main-header {
+		height: calc(2em + 6vw);
+	}
+	.cv-image,
+	.about_section,
+	.contact_section,
+	.education_section,
+	.slider-hobbies {
+		width: 100%;
+		padding-left: 0;
+	}
+	.main__container {
+		width: 100%;
+		max-width: 95.9375vw;
+	}
+	.cv-image {
+		height: 366px;
+		margin-bottom: 10px;
+	}
+	.contact_section__li-icon {
+		line-height: 2.5em;
+	}
+	.contact_section__li-link {
+		font-size: 1.1em;
+	}
+	.education_section__time-period-box {
+		border-radius: 5px;
+	}
+	.footer__cotainer {
+		max-width: 90vw;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+	.footer_left__text,
+	.footer_right__link {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		font-size: 2.5em;
+	}
+	.footer_social__item__img {
+		width: 12.5vw;
+		height: 12.5vw;
+		margin: 0;
+	}
+	.footer_social__item:not(:last-of-type) {
+		margin-right: 9vw;
+	}
+	.slider-hobbies__h {
+		margin-bottom: 10px;
+	}
+	.slider-hobbies_container {
+		margin: 0 auto;
+		width: 80.65vw;
+		height: 97.55vw;
+	}
+
+	.slider-hobbies__card {
+		width: 80.65vw;
+		height: 97.55vw;
+	}
+	.slider-hobbies__btnbar {
+		bottom: 10%;
+	}
+	.slider-hobbies__btnbar .slider-hobbies__navkeys {
+		height: 30px;
+		width: 30px;
+		margin: auto 12px;
+	}
+	#slider-hobbies_btn1:checked
+		~ .slider-hobbies_container
+		.slider-hobbies_wrapper {
+		transform: translateX(calc(80.65vw - 1.954vw));
+	}
+
+	#slider-hobbies_btn3:checked
+		~ .slider-hobbies_container
+		.slider-hobbies_wrapper {
+		transform: translateX(calc(-80.65vw + 1.954vw));
+	}
+
+	#slider-hobbies_btn1:checked
+		~ .slider-hobbies_container
+		.slider-hobbies__btnbar
+		.key1,
+	#slider-hobbies_btn2:checked
+		~ .slider-hobbies_container
+		.slider-hobbies__btnbar
+		.key2,
+	#slider-hobbies_btn3:checked
+		~ .slider-hobbies_container
+		.slider-hobbies__btnbar
+		.key3 {
+		width: 80px;
+	}
+}
